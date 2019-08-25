@@ -1,0 +1,318 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="0e9f34d5-ae84-40be-94ef-ab07ee18c46b" LowerBound="1.1" HigherBound="68.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="GAV_Currency" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="a4ab5b98-30ad-4230-88f2-e6e93d20518e" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="ApiLayerInputType" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="0a198643-1638-4994-b115-22c31d6af605" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="7feaa822-9cc3-4c47-8224-885fb38b5a25" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.21">
+                    <om:Property Name="Ref" Value="GAV_Currency.ApiLayer" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="5966ffde-5539-4e2c-bf3d-63b46596a0cd" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="f06598a1-4874-481d-9d14-3af016ef1d2e" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="5c89f91c-57c1-4585-a0ee-e608e77e32ba" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.29">
+                    <om:Property Name="Ref" Value="GAV_Currency.ExChangeRatesAPI" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="d7aa636f-f396-439c-ba87-ec2df097e09f" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="67.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="CoreOrchestration" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="83d7d66f-bda7-42a8-b5d7-9e7fbc6a33c8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="GAV_Currency.ApiLayer" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ApiLayerMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="d1ee2bf7-0d28-4eb5-8a51-89ef093af909" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="GAV_Currency.ExChangeRatesAPI" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ExChangeRatesAPIMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="3514e245-3688-4142-a0fc-b1178b14c4bd" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="GAV_Currency.MediatedSchema" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MediatedSchemaMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="22eda272-fb3f-4265-9790-369bf8736724" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="Type" Value="GAV_Currency.InnerApiLayer" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="InnerApiLayerMessage" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="9078375c-d34a-4b94-9468-2af7e8de6826" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="85482241-39b0-4d64-8e5d-133dc5f032c2" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="33.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="ApiLayerInputPort" />
+                    <om:Property Name="MessageName" Value="ApiLayerMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ApiLayerReceive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Receive" OID="5576233d-d6be-42a3-8d5f-1f082443212e" ParentLink="ServiceBody_Statement" LowerBound="33.1" HigherBound="35.1">
+                    <om:Property Name="Activate" Value="False" />
+                    <om:Property Name="PortName" Value="ExChangeRatesAPIPort" />
+                    <om:Property Name="MessageName" Value="ExChangeRatesAPIMessage" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ExChangeRatesAPIReceive" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="99b7b1b6-62e8-4f46-ab5f-bc4951874b62" ParentLink="ServiceBody_Statement" LowerBound="35.1" HigherBound="41.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructInnerSchema" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="Transform" OID="10ff451b-fe19-4817-a208-16f12ed78c89" ParentLink="ComplexStatement_Statement" LowerBound="38.1" HigherBound="40.1">
+                        <om:Property Name="ClassName" Value="GAV_Currency.ApiLayerToInner" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="ApiLayerToInner" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="2d4780bd-25dc-4a2b-b3fe-c0c2de76c492" ParentLink="Transform_InputMessagePartRef" LowerBound="39.82" HigherBound="39.97">
+                            <om:Property Name="MessageRef" Value="ApiLayerMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_4" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="915740e0-5525-4879-8ffd-f8ba6e7aa058" ParentLink="Transform_OutputMessagePartRef" LowerBound="39.28" HigherBound="39.48">
+                            <om:Property Name="MessageRef" Value="InnerApiLayerMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_5" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="00f20459-d5d7-48ab-a6d0-480be4781271" ParentLink="Construct_MessageRef" LowerBound="36.23" HigherBound="36.43">
+                        <om:Property Name="Ref" Value="InnerApiLayerMessage" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Decision" OID="93949bfc-1e89-4b88-a336-cf2f78028cee" ParentLink="ServiceBody_Statement" LowerBound="41.1" HigherBound="59.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Validating Currency" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="74b1f58e-394e-45b0-baa1-113c340e22a0" ParentLink="ReallyComplexStatement_Branch" LowerBound="42.13" HigherBound="54.1">
+                        <om:Property Name="Expression" Value="InnerApiLayerMessage.innerSource == ExChangeRatesAPIMessage.base" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="IsBaseCurrencyEquals" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Decision" OID="19988164-a279-4d79-92b4-fa6e32a29dad" ParentLink="ComplexStatement_Statement" LowerBound="44.1" HigherBound="53.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="Validating Date" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="DecisionBranch" OID="8edb67a4-e020-4508-a945-24fbb1ef8cb7" ParentLink="ReallyComplexStatement_Branch" LowerBound="45.17" HigherBound="48.1">
+                                <om:Property Name="Expression" Value="InnerApiLayerMessage.innerTimestamp.DayOfYear == ExChangeRatesAPIMessage.date.DayOfYear" />
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="IsTheSameDay" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                            <om:Element Type="DecisionBranch" OID="b63d1818-b6bc-4713-b793-e9202d334798" ParentLink="ReallyComplexStatement_Branch">
+                                <om:Property Name="IsGhostBranch" Value="True" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Name" Value="Else" />
+                                <om:Property Name="Signal" Value="False" />
+                                <om:Element Type="Terminate" OID="54aa0d26-7855-4bf0-8147-e41c5fce62c7" ParentLink="ComplexStatement_Statement" LowerBound="50.1" HigherBound="52.1">
+                                    <om:Property Name="ErrorMessage" Value="&quot;Days does not match&quot;;" />
+                                    <om:Property Name="ReportToAnalyst" Value="True" />
+                                    <om:Property Name="Name" Value="Terminate_1" />
+                                    <om:Property Name="Signal" Value="True" />
+                                </om:Element>
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="5caa7d81-cf3d-4b72-b3cd-53ce9b83c859" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Terminate" OID="4379e989-817e-4c5f-94ba-77bec83d74b1" ParentLink="ComplexStatement_Statement" LowerBound="56.1" HigherBound="58.1">
+                            <om:Property Name="ErrorMessage" Value="&quot;Base currency does not match&quot;;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="BaseCurrencyFailed" />
+                            <om:Property Name="Signal" Value="True" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Construct" OID="959aa338-5d40-4a44-b2da-4e2be4ee2fd1" ParentLink="ServiceBody_Statement" LowerBound="59.1" HigherBound="65.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessage_1" />
+                    <om:Property Name="Signal" Value="False" />
+                    <om:Element Type="Transform" OID="697451a3-9658-4ee1-920d-8df5fb0f30a5" ParentLink="ComplexStatement_Statement" LowerBound="62.1" HigherBound="64.1">
+                        <om:Property Name="ClassName" Value="GAV_Currency.TransformToMediatedSchema" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Transform_1" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="7baa8307-fdbb-46f9-82e5-09b117ab0bf9" ParentLink="Transform_InputMessagePartRef" LowerBound="63.93" HigherBound="63.113">
+                            <om:Property Name="MessageRef" Value="InnerApiLayerMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_1" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="44399ab6-f4bd-4fdf-954a-4eb493637d32" ParentLink="Transform_InputMessagePartRef" LowerBound="63.115" HigherBound="63.138">
+                            <om:Property Name="MessageRef" Value="ExChangeRatesAPIMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_2" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                        <om:Element Type="MessagePartRef" OID="dd2582ac-8187-469f-a7bc-b51c7fb0db5d" ParentLink="Transform_OutputMessagePartRef" LowerBound="63.28" HigherBound="63.49">
+                            <om:Property Name="MessageRef" Value="MediatedSchemaMessage" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="MessagePartReference_3" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="a1007fbf-d623-4af8-8f91-05843469b29b" ParentLink="Construct_MessageRef" LowerBound="60.23" HigherBound="60.44">
+                        <om:Property Name="Ref" Value="MediatedSchemaMessage" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="de5604dd-7de7-4169-9ffc-fb25c9457b7f" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="3" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="GAV_Currency.ApiLayerInputType" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ApiLayerInputPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="95d46f79-cbe4-4782-b120-3cedbeed241d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="97ebf000-7003-49d0-bdad-b42ff4964fc0" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="5" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="GAV_Currency.PortType_1" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ExChangeRatesAPIPort" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="b5863ddf-31d2-4922-96c8-eecb6ed4fcc1" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module GAV_Currency
+{
+    internal porttype ApiLayerInputType
+    {
+        oneway Operation_1
+        {
+            ApiLayer
+        };
+    };
+    internal porttype PortType_1
+    {
+        oneway Operation_1
+        {
+            ExChangeRatesAPI
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service CoreOrchestration
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements ApiLayerInputType ApiLayerInputPort;
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_1 ExChangeRatesAPIPort;
+        message ApiLayer ApiLayerMessage;
+        message ExChangeRatesAPI ExChangeRatesAPIMessage;
+        message MediatedSchema MediatedSchemaMessage;
+        message InnerApiLayer InnerApiLayerMessage;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("85482241-39b0-4d64-8e5d-133dc5f032c2")]
+            activate receive (ApiLayerInputPort.Operation_1, ApiLayerMessage);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5576233d-d6be-42a3-8d5f-1f082443212e")]
+            receive (ExChangeRatesAPIPort.Operation_1, ExChangeRatesAPIMessage);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("99b7b1b6-62e8-4f46-ab5f-bc4951874b62")]
+            construct InnerApiLayerMessage
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("10ff451b-fe19-4817-a208-16f12ed78c89")]
+                transform (InnerApiLayerMessage) = GAV_Currency.ApiLayerToInner (ApiLayerMessage);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("93949bfc-1e89-4b88-a336-cf2f78028cee")]
+            if (InnerApiLayerMessage.innerSource == ExChangeRatesAPIMessage.base)
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("19988164-a279-4d79-92b4-fa6e32a29dad")]
+                if (InnerApiLayerMessage.innerTimestamp.DayOfYear == ExChangeRatesAPIMessage.date.DayOfYear)
+                {
+                }
+                else 
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("54aa0d26-7855-4bf0-8147-e41c5fce62c7")]
+                    terminate "Days does not match";;
+                }
+            }
+            else 
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("4379e989-817e-4c5f-94ba-77bec83d74b1")]
+                terminate "Base currency does not match";;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("959aa338-5d40-4a44-b2da-4e2be4ee2fd1")]
+            construct MediatedSchemaMessage
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("697451a3-9658-4ee1-920d-8df5fb0f30a5")]
+                transform (MediatedSchemaMessage) = GAV_Currency.TransformToMediatedSchema (InnerApiLayerMessage, ExChangeRatesAPIMessage);
+            }
+        }
+    }
+}
+
