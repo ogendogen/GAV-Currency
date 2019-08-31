@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="0e9f34d5-ae84-40be-94ef-ab07ee18c46b" LowerBound="1.1" HigherBound="67.1">
+    <om:Element Type="Module" OID="0e9f34d5-ae84-40be-94ef-ab07ee18c46b" LowerBound="1.1" HigherBound="49.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="GAV_Currency" />
         <om:Property Name="Signal" Value="False" />
@@ -44,7 +44,7 @@
                 </om:Element>
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="d7aa636f-f396-439c-ba87-ec2df097e09f" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="66.1">
+        <om:Element Type="ServiceDeclaration" OID="d7aa636f-f396-439c-ba87-ec2df097e09f" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="48.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
@@ -112,83 +112,35 @@
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
                 </om:Element>
-                <om:Element Type="Decision" OID="101bdca5-6aae-4a7a-aa8a-452881bd5669" ParentLink="ServiceBody_Statement" LowerBound="38.1" HigherBound="56.1">
-                    <om:Property Name="ReportToAnalyst" Value="True" />
-                    <om:Property Name="Name" Value="CheckCurrency" />
-                    <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="DecisionBranch" OID="3be4b35b-3bcf-44d2-966a-66c1d9f2b8a7" ParentLink="ReallyComplexStatement_Branch" LowerBound="39.13" HigherBound="51.1">
-                        <om:Property Name="Expression" Value="InnerMediatedSchemaMessage.ApiLayerAPI.innerSource == InnerMediatedSchemaMessage.ExChangeRatesAPI.base" />
-                        <om:Property Name="IsGhostBranch" Value="True" />
-                        <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="IsCurrencyEqual" />
-                        <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="Decision" OID="3d404c14-4383-494f-a662-c5b9e510eb44" ParentLink="ComplexStatement_Statement" LowerBound="41.1" HigherBound="50.1">
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="CheckDate" />
-                            <om:Property Name="Signal" Value="True" />
-                            <om:Element Type="DecisionBranch" OID="d228e92b-7468-4743-a48d-577d7f74dcd9" ParentLink="ReallyComplexStatement_Branch" LowerBound="42.17" HigherBound="45.1">
-                                <om:Property Name="Expression" Value="InnerMediatedSchemaMessage.ApiLayerAPI.innerDate == InnerMediatedSchemaMessage.ExChangeRatesAPI.innerDate" />
-                                <om:Property Name="IsGhostBranch" Value="True" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="IsTheSameDay" />
-                                <om:Property Name="Signal" Value="True" />
-                            </om:Element>
-                            <om:Element Type="DecisionBranch" OID="aa2ddad2-32e9-4aee-83cb-f286eee867e6" ParentLink="ReallyComplexStatement_Branch">
-                                <om:Property Name="IsGhostBranch" Value="True" />
-                                <om:Property Name="ReportToAnalyst" Value="True" />
-                                <om:Property Name="Name" Value="Else" />
-                                <om:Property Name="Signal" Value="False" />
-                                <om:Element Type="Terminate" OID="ceaa6e42-e81b-485b-8891-36c873065479" ParentLink="ComplexStatement_Statement" LowerBound="47.1" HigherBound="49.1">
-                                    <om:Property Name="ErrorMessage" Value="&quot;Messages are from different days&quot;;" />
-                                    <om:Property Name="ReportToAnalyst" Value="True" />
-                                    <om:Property Name="Name" Value="Days not equal" />
-                                    <om:Property Name="Signal" Value="False" />
-                                </om:Element>
-                            </om:Element>
-                        </om:Element>
-                    </om:Element>
-                    <om:Element Type="DecisionBranch" OID="e4135f06-3feb-4802-aca0-909fe28d73a8" ParentLink="ReallyComplexStatement_Branch">
-                        <om:Property Name="IsGhostBranch" Value="True" />
-                        <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="Else" />
-                        <om:Property Name="Signal" Value="False" />
-                        <om:Element Type="Terminate" OID="755e79c2-f551-43fd-b82c-29a1ecd762c6" ParentLink="ComplexStatement_Statement" LowerBound="53.1" HigherBound="55.1">
-                            <om:Property Name="ErrorMessage" Value="&quot;Currencies are not equal&quot;;" />
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="Incorrect currencies" />
-                            <om:Property Name="Signal" Value="True" />
-                        </om:Element>
-                    </om:Element>
-                </om:Element>
-                <om:Element Type="Construct" OID="2bdb3a85-ccbc-44c3-a629-3d1a48595355" ParentLink="ServiceBody_Statement" LowerBound="56.1" HigherBound="62.1">
+                <om:Element Type="Construct" OID="2bdb3a85-ccbc-44c3-a629-3d1a48595355" ParentLink="ServiceBody_Statement" LowerBound="38.1" HigherBound="44.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
                     <om:Property Name="Name" Value="ConstructOutput" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="Transform" OID="bc0bf0a5-4f11-45e2-8b20-2d4a40e539e9" ParentLink="ComplexStatement_Statement" LowerBound="59.1" HigherBound="61.1">
+                    <om:Element Type="Transform" OID="bc0bf0a5-4f11-45e2-8b20-2d4a40e539e9" ParentLink="ComplexStatement_Statement" LowerBound="41.1" HigherBound="43.1">
                         <om:Property Name="ClassName" Value="GAV_Currency.InnerMediatedToOutput" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Name" Value="TransformToOutput" />
                         <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="MessagePartRef" OID="b1828e67-6f68-4294-9b6c-eb4b54ed88f2" ParentLink="Transform_InputMessagePartRef" LowerBound="60.86" HigherBound="60.112">
+                        <om:Element Type="MessagePartRef" OID="b1828e67-6f68-4294-9b6c-eb4b54ed88f2" ParentLink="Transform_InputMessagePartRef" LowerBound="42.86" HigherBound="42.112">
                             <om:Property Name="MessageRef" Value="InnerMediatedSchemaMessage" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_3" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="02797afa-aeae-4fb4-9c3e-678e1ff69073" ParentLink="Transform_OutputMessagePartRef" LowerBound="60.28" HigherBound="60.46">
+                        <om:Element Type="MessagePartRef" OID="02797afa-aeae-4fb4-9c3e-678e1ff69073" ParentLink="Transform_OutputMessagePartRef" LowerBound="42.28" HigherBound="42.46">
                             <om:Property Name="MessageRef" Value="FinalOutputMessage" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_4" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="MessageRef" OID="6e55a1dd-b59c-4967-9d15-a544161905f8" ParentLink="Construct_MessageRef" LowerBound="57.23" HigherBound="57.41">
+                    <om:Element Type="MessageRef" OID="6e55a1dd-b59c-4967-9d15-a544161905f8" ParentLink="Construct_MessageRef" LowerBound="39.23" HigherBound="39.41">
                         <om:Property Name="Ref" Value="FinalOutputMessage" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
                 </om:Element>
-                <om:Element Type="Send" OID="9e9fc421-8c8e-444b-84c7-0c39210419fc" ParentLink="ServiceBody_Statement" LowerBound="62.1" HigherBound="64.1">
+                <om:Element Type="Send" OID="9e9fc421-8c8e-444b-84c7-0c39210419fc" ParentLink="ServiceBody_Statement" LowerBound="44.1" HigherBound="46.1">
                     <om:Property Name="PortName" Value="OutputPort" />
                     <om:Property Name="MessageName" Value="FinalOutputMessage" />
                     <om:Property Name="OperationName" Value="SendOutputPort" />
@@ -217,7 +169,7 @@
             <om:Element Type="PortDeclaration" OID="a78a6136-ed00-47e3-90c7-c8cf39539857" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
                 <om:Property Name="PortModifier" Value="Uses" />
                 <om:Property Name="Orientation" Value="Right" />
-                <om:Property Name="PortIndex" Value="59" />
+                <om:Property Name="PortIndex" Value="33" />
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
@@ -270,24 +222,6 @@ module GAV_Currency
             {
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("9c2fe4be-3f7d-4d0b-b230-ae9760dec78c")]
                 transform (InnerMediatedSchemaMessage) = GAV_Currency.MediatedSchemaToInner (MediatedSchemaMessage);
-            }
-            [Microsoft.XLANGs.BaseTypes.DesignerPosition("101bdca5-6aae-4a7a-aa8a-452881bd5669")]
-            if (InnerMediatedSchemaMessage.ApiLayerAPI.innerSource == InnerMediatedSchemaMessage.ExChangeRatesAPI.base)
-            {
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("3d404c14-4383-494f-a662-c5b9e510eb44")]
-                if (InnerMediatedSchemaMessage.ApiLayerAPI.innerDate == InnerMediatedSchemaMessage.ExChangeRatesAPI.innerDate)
-                {
-                }
-                else 
-                {
-                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("ceaa6e42-e81b-485b-8891-36c873065479")]
-                    terminate "Messages are from different days";;
-                }
-            }
-            else 
-            {
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("755e79c2-f551-43fd-b82c-29a1ecd762c6")]
-                terminate "Currencies are not equal";;
             }
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("2bdb3a85-ccbc-44c3-a629-3d1a48595355")]
             construct FinalOutputMessage
