@@ -2,7 +2,7 @@
 #error Do not define __DESIGNER_DATA.
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
-    <om:Element Type="Module" OID="0e9f34d5-ae84-40be-94ef-ab07ee18c46b" LowerBound="1.1" HigherBound="49.1">
+    <om:Element Type="Module" OID="0e9f34d5-ae84-40be-94ef-ab07ee18c46b" LowerBound="1.1" HigherBound="42.1">
         <om:Property Name="ReportToAnalyst" Value="True" />
         <om:Property Name="Name" Value="GAV_Currency" />
         <om:Property Name="Signal" Value="False" />
@@ -44,7 +44,7 @@
                 </om:Element>
             </om:Element>
         </om:Element>
-        <om:Element Type="ServiceDeclaration" OID="d7aa636f-f396-439c-ba87-ec2df097e09f" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="48.1">
+        <om:Element Type="ServiceDeclaration" OID="d7aa636f-f396-439c-ba87-ec2df097e09f" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="41.1">
             <om:Property Name="InitializedTransactionType" Value="False" />
             <om:Property Name="IsInvokable" Value="False" />
             <om:Property Name="TypeModifier" Value="Internal" />
@@ -58,14 +58,7 @@
                 <om:Property Name="Name" Value="MediatedSchemaMessage" />
                 <om:Property Name="Signal" Value="True" />
             </om:Element>
-            <om:Element Type="MessageDeclaration" OID="da528938-55ef-4062-a1b8-46a203406a6b" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
-                <om:Property Name="Type" Value="GAV_Currency.InnerMediatedSchema" />
-                <om:Property Name="ParamDirection" Value="In" />
-                <om:Property Name="ReportToAnalyst" Value="True" />
-                <om:Property Name="Name" Value="InnerMediatedSchemaMessage" />
-                <om:Property Name="Signal" Value="True" />
-            </om:Element>
-            <om:Element Type="MessageDeclaration" OID="e84669a7-83ed-41bf-9570-b6085eb54af6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+            <om:Element Type="MessageDeclaration" OID="e84669a7-83ed-41bf-9570-b6085eb54af6" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
                 <om:Property Name="Type" Value="GAV_Currency.FinalOutputSchema" />
                 <om:Property Name="ParamDirection" Value="In" />
                 <om:Property Name="ReportToAnalyst" Value="True" />
@@ -74,7 +67,7 @@
             </om:Element>
             <om:Element Type="ServiceBody" OID="9078375c-d34a-4b94-9468-2af7e8de6826" ParentLink="ServiceDeclaration_ServiceBody">
                 <om:Property Name="Signal" Value="False" />
-                <om:Element Type="Receive" OID="85482241-39b0-4d64-8e5d-133dc5f032c2" ParentLink="ServiceBody_Statement" LowerBound="30.1" HigherBound="32.1">
+                <om:Element Type="Receive" OID="85482241-39b0-4d64-8e5d-133dc5f032c2" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
                     <om:Property Name="Activate" Value="True" />
                     <om:Property Name="PortName" Value="InputPort" />
                     <om:Property Name="MessageName" Value="MediatedSchemaMessage" />
@@ -84,63 +77,35 @@
                     <om:Property Name="Name" Value="ApiLayerReceive" />
                     <om:Property Name="Signal" Value="True" />
                 </om:Element>
-                <om:Element Type="Construct" OID="5f57ee00-f69d-4345-ac03-55f7cc64f70e" ParentLink="ServiceBody_Statement" LowerBound="32.1" HigherBound="38.1">
+                <om:Element Type="Construct" OID="2bdb3a85-ccbc-44c3-a629-3d1a48595355" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="37.1">
                     <om:Property Name="ReportToAnalyst" Value="True" />
-                    <om:Property Name="Name" Value="ConstructInner" />
+                    <om:Property Name="Name" Value="ConstructOutput" />
                     <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="Transform" OID="9c2fe4be-3f7d-4d0b-b230-ae9760dec78c" ParentLink="ComplexStatement_Statement" LowerBound="35.1" HigherBound="37.1">
-                        <om:Property Name="ClassName" Value="GAV_Currency.MediatedSchemaToInner" />
+                    <om:Element Type="Transform" OID="bc0bf0a5-4f11-45e2-8b20-2d4a40e539e9" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="36.1">
+                        <om:Property Name="ClassName" Value="GAV_Currency.MediatedToOutput" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="TransformToInner" />
-                        <om:Property Name="Signal" Value="False" />
-                        <om:Element Type="MessagePartRef" OID="8997d378-4cb2-4e9e-a88f-69c899ad2517" ParentLink="Transform_InputMessagePartRef" LowerBound="36.94" HigherBound="36.115">
+                        <om:Property Name="Name" Value="TransformToOutput" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="MessagePartRef" OID="ceac5a21-e0f9-4656-90dd-8eccd802cabb" ParentLink="Transform_InputMessagePartRef" LowerBound="35.81" HigherBound="35.102">
                             <om:Property Name="MessageRef" Value="MediatedSchemaMessage" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_1" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
-                        <om:Element Type="MessagePartRef" OID="7620207e-57d1-4451-ac9f-5f429e463399" ParentLink="Transform_OutputMessagePartRef" LowerBound="36.28" HigherBound="36.54">
-                            <om:Property Name="MessageRef" Value="InnerMediatedSchemaMessage" />
+                        <om:Element Type="MessagePartRef" OID="9990e6cb-02c5-4e5f-aeeb-4ec889f0f46a" ParentLink="Transform_OutputMessagePartRef" LowerBound="35.28" HigherBound="35.46">
+                            <om:Property Name="MessageRef" Value="FinalOutputMessage" />
                             <om:Property Name="ReportToAnalyst" Value="True" />
                             <om:Property Name="Name" Value="MessagePartReference_2" />
                             <om:Property Name="Signal" Value="False" />
                         </om:Element>
                     </om:Element>
-                    <om:Element Type="MessageRef" OID="f7c549ec-6f02-4c03-b4ac-864964932e47" ParentLink="Construct_MessageRef" LowerBound="33.23" HigherBound="33.49">
-                        <om:Property Name="Ref" Value="InnerMediatedSchemaMessage" />
-                        <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Signal" Value="False" />
-                    </om:Element>
-                </om:Element>
-                <om:Element Type="Construct" OID="2bdb3a85-ccbc-44c3-a629-3d1a48595355" ParentLink="ServiceBody_Statement" LowerBound="38.1" HigherBound="44.1">
-                    <om:Property Name="ReportToAnalyst" Value="True" />
-                    <om:Property Name="Name" Value="ConstructOutput" />
-                    <om:Property Name="Signal" Value="True" />
-                    <om:Element Type="Transform" OID="bc0bf0a5-4f11-45e2-8b20-2d4a40e539e9" ParentLink="ComplexStatement_Statement" LowerBound="41.1" HigherBound="43.1">
-                        <om:Property Name="ClassName" Value="GAV_Currency.InnerMediatedToOutput" />
-                        <om:Property Name="ReportToAnalyst" Value="True" />
-                        <om:Property Name="Name" Value="TransformToOutput" />
-                        <om:Property Name="Signal" Value="True" />
-                        <om:Element Type="MessagePartRef" OID="b1828e67-6f68-4294-9b6c-eb4b54ed88f2" ParentLink="Transform_InputMessagePartRef" LowerBound="42.86" HigherBound="42.112">
-                            <om:Property Name="MessageRef" Value="InnerMediatedSchemaMessage" />
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="MessagePartReference_3" />
-                            <om:Property Name="Signal" Value="False" />
-                        </om:Element>
-                        <om:Element Type="MessagePartRef" OID="02797afa-aeae-4fb4-9c3e-678e1ff69073" ParentLink="Transform_OutputMessagePartRef" LowerBound="42.28" HigherBound="42.46">
-                            <om:Property Name="MessageRef" Value="FinalOutputMessage" />
-                            <om:Property Name="ReportToAnalyst" Value="True" />
-                            <om:Property Name="Name" Value="MessagePartReference_4" />
-                            <om:Property Name="Signal" Value="False" />
-                        </om:Element>
-                    </om:Element>
-                    <om:Element Type="MessageRef" OID="6e55a1dd-b59c-4967-9d15-a544161905f8" ParentLink="Construct_MessageRef" LowerBound="39.23" HigherBound="39.41">
+                    <om:Element Type="MessageRef" OID="6e55a1dd-b59c-4967-9d15-a544161905f8" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.41">
                         <om:Property Name="Ref" Value="FinalOutputMessage" />
                         <om:Property Name="ReportToAnalyst" Value="True" />
                         <om:Property Name="Signal" Value="False" />
                     </om:Element>
                 </om:Element>
-                <om:Element Type="Send" OID="9e9fc421-8c8e-444b-84c7-0c39210419fc" ParentLink="ServiceBody_Statement" LowerBound="44.1" HigherBound="46.1">
+                <om:Element Type="Send" OID="9e9fc421-8c8e-444b-84c7-0c39210419fc" ParentLink="ServiceBody_Statement" LowerBound="37.1" HigherBound="39.1">
                     <om:Property Name="PortName" Value="OutputPort" />
                     <om:Property Name="MessageName" Value="FinalOutputMessage" />
                     <om:Property Name="OperationName" Value="SendOutputPort" />
@@ -169,7 +134,7 @@
             <om:Element Type="PortDeclaration" OID="a78a6136-ed00-47e3-90c7-c8cf39539857" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
                 <om:Property Name="PortModifier" Value="Uses" />
                 <om:Property Name="Orientation" Value="Right" />
-                <om:Property Name="PortIndex" Value="33" />
+                <om:Property Name="PortIndex" Value="19" />
                 <om:Property Name="IsWebPort" Value="False" />
                 <om:Property Name="OrderedDelivery" Value="False" />
                 <om:Property Name="DeliveryNotification" Value="None" />
@@ -211,23 +176,16 @@ module GAV_Currency
         [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
         port uses OutputPortType OutputPort;
         message MediatedSchema MediatedSchemaMessage;
-        message InnerMediatedSchema InnerMediatedSchemaMessage;
         message FinalOutputSchema FinalOutputMessage;
         body ()
         {
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("85482241-39b0-4d64-8e5d-133dc5f032c2")]
             activate receive (InputPort.InputPortOperation, MediatedSchemaMessage);
-            [Microsoft.XLANGs.BaseTypes.DesignerPosition("5f57ee00-f69d-4345-ac03-55f7cc64f70e")]
-            construct InnerMediatedSchemaMessage
-            {
-                [Microsoft.XLANGs.BaseTypes.DesignerPosition("9c2fe4be-3f7d-4d0b-b230-ae9760dec78c")]
-                transform (InnerMediatedSchemaMessage) = GAV_Currency.MediatedSchemaToInner (MediatedSchemaMessage);
-            }
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("2bdb3a85-ccbc-44c3-a629-3d1a48595355")]
             construct FinalOutputMessage
             {
                 [Microsoft.XLANGs.BaseTypes.DesignerPosition("bc0bf0a5-4f11-45e2-8b20-2d4a40e539e9")]
-                transform (FinalOutputMessage) = GAV_Currency.InnerMediatedToOutput (InnerMediatedSchemaMessage);
+                transform (FinalOutputMessage) = GAV_Currency.MediatedToOutput (MediatedSchemaMessage);
             }
             [Microsoft.XLANGs.BaseTypes.DesignerPosition("9e9fc421-8c8e-444b-84c7-0c39210419fc")]
             send (OutputPort.SendOutputPort, FinalOutputMessage);
