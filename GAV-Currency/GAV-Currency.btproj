@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>GAVCurrency.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.BizTalk.Pipeline.Components, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System">
@@ -68,13 +74,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Schema Include="ExChangeRatesAPI.xsd">
-      <TypeName>ExChangeRatesAPI</TypeName>
-      <Namespace>GAV_Currency</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
     <Pipeline Include="JsonToXmlReceivePipeline.btp">
       <TypeName>JsonToXmlReceivePipeline</TypeName>
       <Namespace>GAV_Currency</Namespace>
@@ -89,46 +88,11 @@
     </Pipeline>
   </ItemGroup>
   <ItemGroup>
-    <Schema Include="ApiLayer.xsd">
-      <TypeName>ApiLayer</TypeName>
-      <Namespace>GAV_Currency</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
-    <Schema Include="MediatedSchema.xsd">
-      <TypeName>MediatedSchema</TypeName>
-      <Namespace>GAV_Currency</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
     <XLang Include="CoreOrchestration.odx">
       <TypeName>CoreOrchestration</TypeName>
       <Namespace>GAV_Currency</Namespace>
       <SubType>Task</SubType>
     </XLang>
-  </ItemGroup>
-  <ItemGroup>
-    <Schema Include="PropertySchema.xsd">
-      <TypeName>PropertySchema</TypeName>
-      <Namespace>GAV_Currency.PropertySchema</Namespace>
-      <SubType>Task</SubType>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
-    <Schema Include="InnerApiLayer.xsd">
-      <SubType>Task</SubType>
-      <TypeName>InnerApiLayer</TypeName>
-      <Namespace>GAV_Currency</Namespace>
-    </Schema>
-  </ItemGroup>
-  <ItemGroup>
-    <Map Include="ApiLayerToInner.btm">
-      <TypeName>ApiLayerToInner</TypeName>
-      <Namespace>GAV_Currency</Namespace>
-      <SubType>Task</SubType>
-    </Map>
   </ItemGroup>
   <ItemGroup>
     <Schema Include="ErrorSchema.xsd">
@@ -138,18 +102,26 @@
     </Schema>
   </ItemGroup>
   <ItemGroup>
-    <Map Include="TransformToMediatedSchema.btm">
-      <TypeName>TransformToMediatedSchema</TypeName>
+    <Schema Include="FinalOutputSchema.xsd">
+      <TypeName>FinalOutputSchema</TypeName>
+      <Namespace>GAV_Currency</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GAVCurrency.snk" />
+    <Schema Include="MediatedSchema.xsd">
+      <TypeName>MediatedSchema</TypeName>
+      <Namespace>GAV_Currency</Namespace>
+      <SubType>Task</SubType>
+    </Schema>
+  </ItemGroup>
+  <ItemGroup>
+    <Map Include="MediatedToOutput.btm">
+      <TypeName>MediatedToOutput</TypeName>
       <Namespace>GAV_Currency</Namespace>
       <SubType>Task</SubType>
     </Map>
-  </ItemGroup>
-  <ItemGroup>
-    <XLang Include="SubOrchestration.odx">
-      <TypeName>SubOrchestration</TypeName>
-      <Namespace>GAV_Currency</Namespace>
-      <SubType>Task</SubType>
-    </XLang>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\BizTalk\BizTalkC.targets" />
